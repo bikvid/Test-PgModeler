@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.2" use-changelog="false" max-obj-count="4"
+	 last-position="0,-7" last-zoom="1" scene-rect="0,-7,1570.8,1083.8"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="EMD_ESG" encoding="UTF8" lc-collate="Russian_Russia.1251" lc-ctype="Russian_Russia.1251" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layers="0" rect-visible="true" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<schema name="3NF_Mod_GZT" layers="0" rect-visible="true" fill-color="#5ff39d" name-color="#000000">
+	<role name="postgres"/>
+</schema>
+
+<table name="organization" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="&quot;3NF_Mod_GZT&quot;"/>
+	<role name="postgres"/>
+	<position x="80" y="40"/>
+	<column name="organization_code">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="name">
+		<type name="character varying" length="50"/>
+	</column>
+	<column name="organization_desc">
+		<type name="character varying" length="250"/>
+	</column>
+	<column name="organization_pkey" not-null="true">
+		<type name="character varying" length="32"/>
+	</column>
+	<constraint name="organization_pk" type="pk-constr" table="&quot;3NF_Mod_GZT&quot;.organization">
+		<columns names="organization_pkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Object_" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="&quot;3NF_Mod_GZT&quot;"/>
+	<role name="postgres"/>
+	<position x="680" y="60"/>
+	<column name="object_code">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="object_name">
+		<type name="character varying" length="50"/>
+	</column>
+	<column name="object_desc">
+		<type name="character varying" length="250"/>
+	</column>
+	<column name="latitude">
+		<type name="character varying" length="15"/>
+	</column>
+	<column name="longitude">
+		<type name="character varying" length="15"/>
+	</column>
+	<column name="object_pkey" not-null="true">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="organization_pkey_organization">
+		<type name="character varying" length="32"/>
+	</column>
+	<constraint name="object_pkey" type="pk-constr" table="&quot;3NF_Mod_GZT&quot;.&quot;Object_&quot;">
+		<columns names="object_pkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="organization_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="SET NULL" ref-table="&quot;3NF_Mod_GZT&quot;.organization" table="&quot;3NF_Mod_GZT&quot;.&quot;Object_&quot;">
+	<columns names="organization_pkey_organization" ref-type="src-columns"/>
+	<columns names="organization_pkey" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="&quot;rel_Object__organization&quot;" type="relfk" layers="0"
+	 custom-color="#e80c29"
+	 src-table="&quot;3NF_Mod_GZT&quot;.&quot;Object_&quot;"
+	 dst-table="&quot;3NF_Mod_GZT&quot;.organization" reference-fk="organization_fk"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
