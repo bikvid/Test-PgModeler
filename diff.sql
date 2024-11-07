@@ -17,7 +17,7 @@ SET search_path=public,pg_catalog,"3NF_Mod_GZT";
 -- [ Created objects ] --
 -- object: buffer_column | type: COLUMN --
 -- ALTER TABLE "3NF_Mod_GZT"."Object_" DROP COLUMN IF EXISTS buffer_column CASCADE;
-ALTER TABLE "3NF_Mod_GZT"."Object_" ADD COLUMN buffer_column smallint;
+ALTER TABLE "3NF_Mod_GZT"."Object_" ADD COLUMN buffer_column1 smallint;
 -- ddl-end --
 
 
