@@ -4,7 +4,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
 <dbmodel pgmodeler-ver="1.1.5" use-changelog="false" max-obj-count="4"
-	 last-position="0,-7" last-zoom="1" scene-rect="0,-7,1570.8,1083.8"
+	 last-position="0,-27" last-zoom="1" scene-rect="0,-27,1570.8,1103.8"
 	 default-schema="public" default-owner="postgres"
 	 layers="Default layer"
 	 active-layers="0"
@@ -26,11 +26,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="organization" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
 	<schema name="&quot;3NF_Mod_GZT&quot;"/>
 	<role name="postgres"/>
-	<position x="80" y="40"/>
+	<position x="80" y="20"/>
 	<column name="organization_code">
 		<type name="character varying" length="32"/>
 	</column>
-	<column name="name">
+	<column name="name103">
 		<type name="character varying" length="50"/>
 	</column>
 	<column name="organization_desc">
@@ -47,7 +47,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Object_" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
 	<schema name="&quot;3NF_Mod_GZT&quot;"/>
 	<role name="postgres"/>
-	<position x="680" y="60"/>
+	<position x="680" y="40"/>
 	<column name="object_code">
 		<type name="character varying" length="32"/>
 	</column>
