@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.2" use-changelog="false" max-obj-count="16"
+	 last-position="0,0" last-zoom="1" scene-rect="0,0,2569.16,1262.72"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="compare" encoding="UTF8" lc-collate="Russian_Russia.1251" lc-ctype="Russian_Russia.1251" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layers="0" rect-visible="true" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<schema name="ods_data_personnel" layers="0" rect-visible="true" fill-color="#5ea49d" name-color="#000000">
+	<role name="postgres"/>
+</schema>
+
+<extension name="adminpack" cur-version="2.1">
+	<schema name="pg_catalog"/>
+	<comment> <![CDATA[administrative functions for PostgreSQL]]> </comment>
+</extension>
+
+<table name="hub_cfo" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="60" y="60"/>
+	<column name="hub_cfo_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="cfo_name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="hub_cfo_pkey" type="pk-constr" table="ods_data_personnel.hub_cfo">
+		<columns names="hub_cfo_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_cfo_dt_tech" table="ods_data_personnel.hub_cfo"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="hub_department" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="520" y="60"/>
+	<column name="hub_department_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="department_name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="hub_department_pkey" type="pk-constr" table="ods_data_personnel.hub_department">
+		<columns names="hub_department_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_department_dt_tech" table="ods_data_personnel.hub_department"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="hub_people" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="1040" y="60"/>
+	<column name="hub_people_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="fio" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<column name="data_rozdenia" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="hub_people_pkey" type="pk-constr" table="ods_data_personnel.hub_people">
+		<columns names="hub_people_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_people_dt_tech" table="ods_data_personnel.hub_people"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="hub_personnel_category" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="1540" y="60"/>
+	<column name="hub_personnel_category_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="personnel_category_name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="hub_personnel_category_pkey" type="pk-constr" table="ods_data_personnel.hub_personnel_category">
+		<columns names="hub_personnel_category_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_personnel_category_dt_tech" table="ods_data_personnel.hub_personnel_category"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="hub_position" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="2120" y="60"/>
+	<column name="hub_position_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="position_name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="hub_position_pkey" type="pk-constr" table="ods_data_personnel.hub_position">
+		<columns names="hub_position_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_position_dt_tech" table="ods_data_personnel.hub_position"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="hub_territory" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="60" y="340"/>
+	<column name="hub_territory_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="territory_name" not-null="true">
+		<type name="character varying" length="255"/>
+	</column>
+	<constraint name="hub_territory_pkey" type="pk-constr" table="ods_data_personnel.hub_territory">
+		<columns names="hub_territory_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_hub_territory_dt_tech" table="ods_data_personnel.hub_territory"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="lnk_people_staff_tbl" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="560" y="860"/>
+	<column name="lnk_people_staff_tbl_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_diff" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="hub_people_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_position_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_personnel_category_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_department_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<constraint name="lnk_people_staff_tbl_pkey" type="pk-constr" table="ods_data_personnel.lnk_people_staff_tbl">
+		<columns names="lnk_people_staff_tbl_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_lnk_people_staff_tbl_dt_tech" table="ods_data_personnel.lnk_people_staff_tbl"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="lnk_staffing_table" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="1140" y="920"/>
+	<column name="lnk_staffing_table_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_diff" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="hub_position_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_personnel_category_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_department_hkey">
+		<type name="uuid" length="0"/>
+	</column>
+	<constraint name="lnk_staffing_table_pkey" type="pk-constr" table="ods_data_personnel.lnk_staffing_table">
+		<columns names="lnk_staffing_table_hkey" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_lnk_staffing_table_dt_tech" table="ods_data_personnel.lnk_staffing_table"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+</index>
+
+<table name="sat_cfo" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="1620" y="340"/>
+	<column name="hub_cfo_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_tech_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_from">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_hashdiff" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_diff">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="sat_cfo_pkey" type="pk-constr" table="ods_data_personnel.sat_cfo">
+		<columns names="hub_cfo_hkey,dwh_tech_from" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_sat_cfo_dt_func" table="ods_data_personnel.sat_cfo"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_func_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_func_to"/>
+		</idxelement>
+</index>
+
+<index name="idx_sat_cfo_dt_tech" table="ods_data_personnel.sat_cfo"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_to"/>
+		</idxelement>
+</index>
+
+<table name="sat_department" layers="0" collapse-mode="2" max-obj-count="13" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="2040" y="340"/>
+	<column name="hub_department_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_department_parent_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_department_block_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_tech_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_from">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_hashdiff" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_diff">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="sat_department_pkey" type="pk-constr" table="ods_data_personnel.sat_department">
+		<columns names="hub_department_hkey,dwh_tech_from" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_sat_department_dt_func" table="ods_data_personnel.sat_department"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_func_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_func_to"/>
+		</idxelement>
+</index>
+
+<index name="idx_sat_department_dt_tech" table="ods_data_personnel.sat_department"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_to"/>
+		</idxelement>
+</index>
+
+<table name="sat_people" layers="0" collapse-mode="2" max-obj-count="13" z-value="0">
+	<schema name="ods_data_personnel"/>
+	<role name="postgres"/>
+	<position x="60" y="800"/>
+	<column name="hub_people_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_cfo_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="hub_territory_hkey" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_tech_from" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_tech_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_from">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_func_to">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="dwh_record_source">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="dwh_process_id">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_hashdiff" not-null="true">
+		<type name="uuid" length="0"/>
+	</column>
+	<column name="dwh_diff">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="sat_people_pkey" type="pk-constr" table="ods_data_personnel.sat_people">
+		<columns names="hub_people_hkey,dwh_tech_from" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="idx_sat_people_dt_func" table="ods_data_personnel.sat_people"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_func_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_func_to"/>
+		</idxelement>
+</index>
+
+<index name="idx_sat_people_dt_tech" table="ods_data_personnel.sat_people"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_from"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="dwh_tech_to"/>
+		</idxelement>
+</index>
+
+<constraint name="lnk_people_staff_tbl_hub_department" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_department" table="ods_data_personnel.lnk_people_staff_tbl">
+	<columns names="hub_department_hkey" ref-type="src-columns"/>
+	<columns names="hub_department_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_people_staff_tbl_hub_people" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_people" table="ods_data_personnel.lnk_people_staff_tbl">
+	<columns names="hub_people_hkey" ref-type="src-columns"/>
+	<columns names="hub_people_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_people_staff_tbl_hub_personnel_category" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_personnel_category" table="ods_data_personnel.lnk_people_staff_tbl">
+	<columns names="hub_personnel_category_hkey" ref-type="src-columns"/>
+	<columns names="hub_personnel_category_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_people_staff_tbl_hub_position" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_position" table="ods_data_personnel.lnk_people_staff_tbl">
+	<columns names="hub_position_hkey" ref-type="src-columns"/>
+	<columns names="hub_position_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_staffing_table_hub_department" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_department" table="ods_data_personnel.lnk_staffing_table">
+	<columns names="hub_department_hkey" ref-type="src-columns"/>
+	<columns names="hub_department_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_staffing_table_hub_personnel_category" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_personnel_category" table="ods_data_personnel.lnk_staffing_table">
+	<columns names="hub_personnel_category_hkey" ref-type="src-columns"/>
+	<columns names="hub_personnel_category_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="lnk_staffing_table_hub_position" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_position" table="ods_data_personnel.lnk_staffing_table">
+	<columns names="hub_position_hkey" ref-type="src-columns"/>
+	<columns names="hub_position_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_cfo_hub_cfo" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_cfo" table="ods_data_personnel.sat_cfo">
+	<columns names="hub_cfo_hkey" ref-type="src-columns"/>
+	<columns names="hub_cfo_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_department_hub_department" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_department" table="ods_data_personnel.sat_department">
+	<columns names="hub_department_hkey" ref-type="src-columns"/>
+	<columns names="hub_department_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_department_hub_department_block" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_department" table="ods_data_personnel.sat_department">
+	<columns names="hub_department_block_hkey" ref-type="src-columns"/>
+	<columns names="hub_department_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_department_hub_department_parent" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_department" table="ods_data_personnel.sat_department">
+	<columns names="hub_department_parent_hkey" ref-type="src-columns"/>
+	<columns names="hub_department_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_people_hub_cfo" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_cfo" table="ods_data_personnel.sat_people">
+	<columns names="hub_cfo_hkey" ref-type="src-columns"/>
+	<columns names="hub_cfo_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_people_hub_people" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_people" table="ods_data_personnel.sat_people">
+	<columns names="hub_people_hkey" ref-type="src-columns"/>
+	<columns names="hub_people_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sat_people_hub_territory" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="ods_data_personnel.hub_territory" table="ods_data_personnel.sat_people">
+	<columns names="hub_territory_hkey" ref-type="src-columns"/>
+	<columns names="hub_territory_hkey" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_lnk_people_staff_tbl_hub_department" type="relfk" layers="0"
+	 custom-color="#28c07b"
+	 src-table="ods_data_personnel.lnk_people_staff_tbl"
+	 dst-table="ods_data_personnel.hub_department" reference-fk="lnk_people_staff_tbl_hub_department"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_people_staff_tbl_hub_people" type="relfk" layers="0"
+	 custom-color="#c0fe0f"
+	 src-table="ods_data_personnel.lnk_people_staff_tbl"
+	 dst-table="ods_data_personnel.hub_people" reference-fk="lnk_people_staff_tbl_hub_people"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_people_staff_tbl_hub_personnel_category" type="relfk" layers="0"
+	 custom-color="#1dd0a0"
+	 src-table="ods_data_personnel.lnk_people_staff_tbl"
+	 dst-table="ods_data_personnel.hub_personnel_category" reference-fk="lnk_people_staff_tbl_hub_personnel_category"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_people_staff_tbl_hub_position" type="relfk" layers="0"
+	 custom-color="#6d9783"
+	 src-table="ods_data_personnel.lnk_people_staff_tbl"
+	 dst-table="ods_data_personnel.hub_position" reference-fk="lnk_people_staff_tbl_hub_position"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_staffing_table_hub_department" type="relfk" layers="0"
+	 custom-color="#21e2ae"
+	 src-table="ods_data_personnel.lnk_staffing_table"
+	 dst-table="ods_data_personnel.hub_department" reference-fk="lnk_staffing_table_hub_department"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_staffing_table_hub_personnel_category" type="relfk" layers="0"
+	 custom-color="#820a36"
+	 src-table="ods_data_personnel.lnk_staffing_table"
+	 dst-table="ods_data_personnel.hub_personnel_category" reference-fk="lnk_staffing_table_hub_personnel_category"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_lnk_staffing_table_hub_position" type="relfk" layers="0"
+	 custom-color="#c48084"
+	 src-table="ods_data_personnel.lnk_staffing_table"
+	 dst-table="ods_data_personnel.hub_position" reference-fk="lnk_staffing_table_hub_position"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_sat_cfo_hub_cfo" type="relfk" layers="0"
+	 custom-color="#c93104"
+	 src-table="ods_data_personnel.sat_cfo"
+	 dst-table="ods_data_personnel.hub_cfo" reference-fk="sat_cfo_hub_cfo"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_department_hub_department" type="relfk" layers="0"
+	 custom-color="#4c77dd"
+	 src-table="ods_data_personnel.sat_department"
+	 dst-table="ods_data_personnel.hub_department" reference-fk="sat_department_hub_department"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_department_hub_department1" type="relfk" layers="0"
+	 custom-color="#a14d9f"
+	 src-table="ods_data_personnel.sat_department"
+	 dst-table="ods_data_personnel.hub_department" reference-fk="sat_department_hub_department_block"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_department_hub_department2" type="relfk" layers="0"
+	 custom-color="#56eecc"
+	 src-table="ods_data_personnel.sat_department"
+	 dst-table="ods_data_personnel.hub_department" reference-fk="sat_department_hub_department_parent"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_people_hub_cfo" type="relfk" layers="0"
+	 custom-color="#aff936"
+	 src-table="ods_data_personnel.sat_people"
+	 dst-table="ods_data_personnel.hub_cfo" reference-fk="sat_people_hub_cfo"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_people_hub_people" type="relfk" layers="0"
+	 custom-color="#18ea4c"
+	 src-table="ods_data_personnel.sat_people"
+	 dst-table="ods_data_personnel.hub_people" reference-fk="sat_people_hub_people"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_sat_people_hub_territory" type="relfk" layers="0"
+	 custom-color="#ce06b4"
+	 src-table="ods_data_personnel.sat_people"
+	 dst-table="ods_data_personnel.hub_territory" reference-fk="sat_people_hub_territory"
+	 src-required="false" dst-required="true"/>
+
+</dbmodel>

@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.1.4" use-changelog="false" max-obj-count="4"
+<dbmodel pgmodeler-ver="1.1.5" use-changelog="false" max-obj-count="4"
 	 last-position="0,-7" last-zoom="1" scene-rect="0,-7,1570.8,1083.8"
 	 default-schema="public" default-owner="postgres"
 	 layers="Default layer"
@@ -30,7 +30,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="organization_code">
 		<type name="character varying" length="32"/>
 	</column>
-	<column name="name1">
+	<column name="name101">
 		<type name="character varying" length="50"/>
 	</column>
 	<column name="organization_desc">
