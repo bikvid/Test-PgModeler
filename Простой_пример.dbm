@@ -30,7 +30,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="organization_code">
 		<type name="character varying" length="32"/>
 	</column>
-	<column name="name101">
+	<column name="name5">
 		<type name="character varying" length="50"/>
 	</column>
 	<column name="organization_desc">
